@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thành Sơn - PS23334 - BẢI 3 - LAB3</title>
+    <style>
+ .container button{
+       width:100px;
+       height:100px;
+    }
+table{
+    margin-left: 35%;
+}
+#a,#b,#kq,#pt{
+    background-color: bisque;
+    font-weight: 800;
+    word-wrap: break-word;
+}
+center{
+    color:red;
+}
+    </style>
+<script>
+    var a=null;
+    var b=null;
+    var pheptinh=null;
+    var kq=null;
+</script>
+</head>
+<body>
+    <table class="container">
+        <center><b><h2>MÁY TÍNH JAVASCRIPT</h2>
+        </b><br>Tác giả: <b>Nguyễn Thành Sơn</b>
+        </center>
+        
+        <tr>
+            <td><button id="7" onclick="ganso(this.id)">7</button></td>
+            <td><button onclick="ganso(8)">8</button></td>
+            <td><button onclick="ganso(9)">9</button></td>
+            <td><button onclick="ganpheptinh('+')">+</button></td>
+            </tr>
+            <tr>
+            <td><button onclick="ganso(4)">4</button></td>
+            <td><button onclick="ganso(5)">5</button></td>
+            <td><button onclick="ganso(6)">6</button></td>
+            <td><button onclick="ganpheptinh('-')">-</button></td>
+            </tr>
+            <tr>
+            <td><button onclick="ganso(1)">1</button></td>
+            <td><button onclick="ganso(2)">2</button></td>
+            <td><button onclick="ganso(3)">3</button></td>
+            <td><button onclick="ganpheptinh('x')">x</button></td>
+            </tr>
+            <tr>
+            <td><button onclick="ganso(0)">0</button></td>
+            <td><button onclick="lam_lai()">C</button></td>
+            <td><button onclick="thuc_hien()">=</button></td>
+            <td><button onclick="ganpheptinh(':')">:</button></td>
+            </tr>
+            <tr>
+                <td><button id="a"></button></td>
+                <td><button id="pt"></button></td>
+                <td><button id="b"></button></td>
+                <td><button id="kq"></button></td>
+            </tr>
+    </table>
+    <script>
+        function ganso(x){
+            if(a==null) a=x;
+            else b=x;
+            console.log("Số 1 = "+a);
+            console.log("Số 2 = "+b);
+        }
+        function ganpheptinh(x){
+            pheptinh=x;
+            console.log(x);
+        }
+        
+        function thuc_hien(){
+            switch(pheptinh){
+                case"+":
+                document.getElementById("a").innerHTML=a;
+                document.getElementById("b").innerHTML=b;
+                document.getElementById("pt").innerHTML=pheptinh;
+                document.getElementById("kq").innerHTML=" = "+(a+b);
+                break;
+                case"-":
+                document.getElementById("a").innerHTML=a;
+                document.getElementById("b").innerHTML=b;
+                document.getElementById("pt").innerHTML=pheptinh;
+                document.getElementById("kq").innerHTML=" = "+(a-b);
+                break;
+                case"x":
+                document.getElementById("a").innerHTML=a;
+                document.getElementById("b").innerHTML=b;
+                document.getElementById("pt").innerHTML=pheptinh;
+                document.getElementById("kq").innerHTML=" = "+(a*b);
+                break;
+                case":":
+                document.getElementById("a").innerHTML=a;
+                document.getElementById("b").innerHTML=b;
+                document.getElementById("pt").innerHTML=pheptinh;
+                document.getElementById("kq").innerHTML=" = "+(a/b);
+                break;
+            }
+        }
+        function lam_lai(){
+            a=null;
+            b=null;
+            pheptinh=null;
+            kq=null;
+        }
+    </script>
+</body>
+</html>

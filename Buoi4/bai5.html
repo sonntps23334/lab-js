@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thành Sơn - PS23334 - Bài 4 - Lab4</title>
+    <style>
+         body{
+         background-image: url("./image/hinh4.jpg");
+    height:100%;
+    min-height:800px;
+    background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+        }
+        .container{
+       text-align: center; 
+       width:100%;
+       
+       margin-top: 100px; 
+   }
+   .content{
+       border: 2px solid black;
+       border-bottom-left-radius: 8px;
+       border-bottom-right-radius: 8px;
+       border-top-left-radius: 8px;
+       border-top-right-radius: 8px;
+       height:500px;
+       background-color: #466289;
+       opacity: 0.9;
+   }
+   button{
+       margin: 5px 5px 25px 5px;
+       background-color: slategrey;
+       border: none;
+       color:white;
+       font-weight: 600;
+       
+       width:150px;
+       height:30px;
+   }
+   img{
+       width:50%;
+   }
+   #kq,#kq1,#kq2{
+       font-size: 22px;
+       padding:5px 5px;
+       color:red;
+   }
+   h3{
+       text-align: center;
+       width:99.7%;
+       margin-top: 0px;
+       color:white;
+       background-color: black;
+       border: 2px solid black;
+   }
+   </style>
+   <script>
+   
+  function fover(){
+      var h=document.getElementById("hinh");
+      h.src="./image/hinh1.jpg";
+     
+  }
+  function fout(){
+      var h=document.getElementById("hinh");
+      h.src="./image/hinh2.jpeg";
+  }
+
+</script>
+</head>
+
+<body>
+    <div class="container">
+       
+        <div class="content">
+    <h3>Hình ảnh</h3>
+ <img id="hinh" src="./image/hinh1.jpg" onmouseover="fover()" onmouseout="fout()">
+
+ 
+ 
+
+</div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thành Sơn - PS2334 - BÀI 5 - LAB 5</title>
+    <style>
+          .container{
+    text-align: center; 
+    width:100%;
+    margin-top: 70px; 
+}
+.content{
+    border: 2px solid black;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: #3a444e;
+}
+button{
+    margin:5px 5px;
+    background-color: slategrey;
+    border: none;
+    color:white;
+    font-weight: 600;
+    text-align: center;
+    width:150px;
+    margin-left:30%;
+    height:30px;
+}
+h3{
+    text-align: center;
+    width:30%;
+    margin-top: 0px;
+    margin-left:35%;
+    color:white;
+    background-color: black;
+    border: 2px solid black;
+    margin-top:20px;
+}
+
+.tit{
+    font-weight:600;
+    font-size: 1.2em;
+    color:aqua;
+}
+th,td{
+    border:1px solid black;
+    padding:6px;
+    text-align: center;
+}
+table{
+    width:100%;
+    
+    border-collapse: collapse;
+}
+button:disabled{
+    background-color: gray;
+}
+.row{
+    display:flex;
+    line-height: 36px;
+    text-align: center;
+}
+.row >div{
+    background: #3e556c;
+    width:25%;
+    border:0.5px solid black;
+}
+header,footer{
+    font-weight: bold;
+    color:white;
+}
+.x, #tongnl, #tongte, #tongtien{
+    color:rgb(235, 85, 85);
+}
+#dongho{
+   float: right;
+   color:aqua;
+}
+</style>
+ 
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+      
+           <div class="tit">TIỀN VÉ TOUR DU LỊCH VỊNH HẠ LONG <span id="dongho">Hiện ngày</span></div>
+        <header class="row">
+        <div class="x">Gia đình</div>
+            <div class="x">Số người lớn</div>
+            <div class="x">Số trẻ em</div>
+            <div class="x">Tiền</div>
+        </header>
+        <header class="row">
+            <div>Đào kho báu</div>
+            <div class="nl" contenteditable="true" onkeyup="tien(this)">11</div>
+            <div class="te" contenteditable="true" onkeyup="tien(this)">3</div>
+            <div class="tien">SoTien</div>
+        </header>
+        <header class="row">
+            <div>Đỗ đạt Cao</div>
+            <div class="nl" contenteditable="true" onkeyup="tien(this)">22</div>
+            <div class="te" contenteditable="true" onkeyup="tien(this)">2</div>
+            <div class="tien">SoTien</div>
+        </header>
+        <header class="row">
+            <div>Mai anh tới</div>
+            <div class="nl" contenteditable="true" onkeyup="tien(this)">33</div>
+            <div class="te" contenteditable="true" onkeyup="tien(this)">4</div>
+            <div class="tien">SoTien</div> </header>
+            <header class="row">
+                <div>Phạm kỷ Luật</div>
+                <div class="nl" contenteditable="true" onkeyup="tien(this)">44</div>
+                <div class="te" contenteditable="true" onkeyup="tien(this)">6</div>
+                <div class="tien">SoTien</div>
+        </header>
+        <header class="row">
+            <div>Mai anh bảo</div>
+            <div class="nl" contenteditable="true" onkeyup="tien(this)">55</div>
+            <div class="te" contenteditable="true" onkeyup="tien(this)">7</div>
+            <div class="tien">SoTien</div>
+        </header>
+        <footer class="row">
+         <div class="x">Tổng </div>
+           <div id="tongnl"></div>
+           <div id="tongte"></div>
+           <div id="tongtien"></div>
+          
+        </footer>
+        <div class="row">
+         <button onclick="tinhtien()">Tính</button><button onclick="anhien()">Ẩn Hiện</button>
+        </div>
+    </div></div>
+</body>
+
+<script>
+    
+function tinhtien(){
+ var nguoilon_arr=document.getElementsByClassName("nl");
+ var treem_arr=document.getElementsByClassName("te");
+ var sotien_arr=document.getElementsByClassName("tien");
+ var tongnguoilon=0, tongtreem=0,tongtien=0;
+ var nf = new Intl.NumberFormat(); // đây nè
+ for(var i=0;i<nguoilon_arr.length;i++){
+     var songuoilon=nguoilon_arr[i].innerText;
+     var sotreem=treem_arr[i].innerText;
+     songuoilon=parseInt(songuoilon);
+     sotreem=parseInt(sotreem);
+     tongnguoilon+=songuoilon;
+     tongtreem+=sotreem;
+     t=songuoilon*1000000 + sotreem*600000;
+     tongtien=+t;
+     sotien_arr[i].innerText=nf.format(t); // đây nè
+ }
+ document.getElementById("tongnl").innerText=tongnguoilon;
+ document.getElementById("tongte").innerText=tongtreem;
+ document.getElementById("tongtien").innerText=nf.format(tongtien);
+}
+
+function tien(obj){
+      var row=obj.parentNode;
+      sonl=row.children[1].innerText;
+      sote=row.children[2].innerText;
+      sonl=parseInt(sonl);
+      sote=parseInt(sote);
+      tongnl+=sonl;
+     tongte+=sote;
+      t= sonl*1000000 + sote*600000; 
+      tongtien=+t;
+     //sotien_arr[i].innerText=nf.format(t);
+     row.children[3].innerText=nf.format(t);
+     document.getElementById("tongnl").innerText=tongnl;
+ document.getElementById("tongte").innerText=tongte;
+ document.getElementById("tongtien").innerText=nf.format(tongtien);
+  }
+
+function anhien(){
+  var row_arr=document.getElementsByClassName("row");
+  for(var i=1;i<row_arr.length-1;i++){
+      if(row_arr[i].style.display=="none") row_arr[i].style.display="";
+      else row_arr[i].style.display="none";
+  }
+}
+
+function tg(){
+    var d = new Date();
+    var nam = d.getFullYear();
+    var thang = d.getMonth()+1;
+    var ngay = d.getDate();
+    var gio = d.getHours();
+    var phut = d.getMinutes();
+    var giay = d.getSeconds();
+    var str = ` ${ngay}/${thang}/${nam}  ${gio}:${phut}:${giay} `;
+    document.getElementById("dongho").innerHTML=str;
+}
+setInterval("tg()", 1000);
+
+</script> 
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thành Sơn - PS23334 - BÀI 3 - LAB2</title>
+<script>
+    var a = prompt("Nhập a");
+    var b = prompt("Nhập b");
+    var c = prompt("Nhập c");
+    var delta = Math.pow(b,2)-4*a*c;
+   
+    var a=ktten(a);
+    function ktten(a){
+         var checka = new String;
+          checka =a;
+         if(!isNaN(checka)){
+            return a;
+        }else{
+           return a=0;
+            } 
+    }
+    var b=kttenb(b);
+    function kttenb(b){
+         var checkb = new String;
+          checkb =b;
+         if(!isNaN(checkb)){
+            return b;
+        }else{
+           return b=0;
+            } 
+    }
+    var c=kttenc(c);
+    function kttenc(c){
+         var checkc = new String;
+          checkc =c;
+         if(!isNaN(checkc)){
+            return c;
+        }else{
+           return c=0;
+            } 
+    }   
+   
+
+</script>
+<style>
+     .container{
+    text-align: center; 
+    width:100%;
+    margin-top: 100px; 
+}
+.content{
+    border: 2px solid black;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+h3{
+    text-align: center;
+    width:99.7%;
+    margin-top: 0px;
+    color:white;
+    background-color: black;
+    border: 2px solid black;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+       
+            <div class="content">
+        <h3>Giải phương trình bậc 2</h3>
+        <script>
+             
+            document.write(a);
+            document.write("x<sup>2</sup> + ");
+            document.write(b);
+            document.write("x + ");
+            document.write(c);
+            document.write(" = 0");
+           
+           
+        </script>
+        <script>
+            if(delta<0){
+                document.write("<p>Phương trình vô nghiệm</p>");
+            }
+            else if(delta==0){
+                var x0= -b/(2*a);
+                document.write("<p>Phương trình có nghiệm kép x0=" + x0 + "</p>");
+            }
+            else{
+                var x1=(-b + Math.sqrt(delta))/(2*a)
+                var x2=(-b - Math.sqrt(delta))/(2*a)
+                document.write("<p>Phương trình có 2 nghiệm:</p>");
+                document.write("<p>x<sub>1</sub>= <b>" + x1 + "</b></p>");
+                document.write("<p>x<sub>2</sub>= <b>" + x2 + "</b></p>");
+            }
+        </script>
+    </div></div>
+</body>
+</html>

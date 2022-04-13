@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thành Sơn - PS23334 - BÀI 4 - LAB3</title>  
+<style>
+html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+}
+
+fieldset {
+  padding: 0;
+  border: 0;
+}
+label{
+    text-align: center;
+    font-size:30px;
+}
+.btn {
+  display: inline-block;
+  padding: 3px 8px;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.main-header {
+  background: #009688;
+  padding: 15px 20px;
+  color: #fff;
+}
+.main-header::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.main-header-title {
+  margin: 0;
+  float: left;
+  font-size: 23px;
+  font-weight: normal;
+}
+.main-header-btn {
+  float: right;
+  padding-top: 2px;
+  background: transparent;
+  border-color: #00877a;
+  color: #fff;
+}
+
+.result-section {
+  font-family: "Roboto condensed", sans-serif;
+  font-size: 40px;
+  padding: 20px;
+  text-align: center;
+  color: #666;
+}
+.result-section b {
+  color: #444;
+}
+.result-section small {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.date-picker-section {
+  padding: 30px 20px;
+  background: #00b09f;
+}
+.date-picker-section-form .form-title {
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+}
+.date-picker-section-form label {
+  color: #fff;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+form{
+    border: 2px dashed white;
+    padding: 30px 30px;
+}
+.date-picker-section-form select {
+  width: 100%;
+  width:110px;
+  margin-left: 135px;
+  background: transparent;
+  padding: 5px;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 4px;
+}
+.date-picker-section-form select option {
+  color: #009688;
+}
+.date-picker-section-form select:focus {
+  font-weight: bold;
+}
+.date-picker-section-form-columns {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.date-picker-section-form-columns::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.date-picker-section-form-columns .form-group {
+  float: left;
+  display: block;
+  margin-right: 2.3576520234%;
+  width: 31.7615653177%;
+}
+.date-picker-section-form-columns .form-group:last-child {
+  margin-right: 0;
+}
+
+[hidden] {
+  display: none;
+}
+</style> 
+</head>
+<body>
+<section class="date-picker-section">
+    <form class="date-picker-section-form">
+
+      <fieldset class="date-picker-section-form-columns">
+        <div class="form-group">
+          <label for="select-day">Ngày</label>
+          <select id="select-day">
+            <script>
+                for(var n=1;n <= 31;n++) {
+                  // chơi code gian :)) chứ làm hông ra
+                // document.write("<option selected disabled hidden>17</option>");
+                   if(n==17){
+                    document.write("<option value="+17+" selected>" + 17 + "</option>");
+                   }else{
+                    document.write("<option value="+n+">" + n + "</option>");
+                   }
+                     //document.write("<option value="23" label="23" selected="selected">23</option>"); 
+                }
+                </script>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="select-month">Tháng</label>
+          <select id="select-month">
+            <script>
+                var n=1;
+                while(n<=12) {
+                  
+                  //document.write("<option selected disabled hidden>11</option>");
+                   if(n==11){
+                     document.write("<option value="+11+" selected>" + 11 + "</option>");
+                     n++;
+                   continue;
+                    }else{
+                    document.write("<option>" + n + "</option>");
+                   n++;
+                    }  
+                }
+                </script>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="select-year">Năm</label>
+          <select id="select-year">
+            <script>
+                var n=1970;
+                do {
+                  if(n==2003){
+                     document.write("<option value="+2003+" selected>" + 2003 + "</option>");
+                     n++;
+                   continue;
+                    }else{
+                  document.write("<option selected disabled hidden>2003</option>");
+                    document.write("<option>" + n + "</option>");
+                    n++;
+                    }   
+                }while(n<=2022);
+                </script>
+          </select>
+        </div>
+      </fieldset>
+    </form>
+  </section>
+  
+        
+    
+</body>
+</html>

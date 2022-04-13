@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thành Sơn - PS23334 - BÀI 4a - LAB2</title>
+<style>
+     .container{
+    text-align: center; 
+    width:100%;
+    margin-top: 100px; 
+}
+.content{
+    border: 2px solid black;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+h3{
+    text-align: center;
+    width:99.7%;
+    margin-top: 0px;
+    color:white;
+    background-color: black;
+    border: 2px solid black;
+}
+#t{
+    font-weight: 800;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+       
+            <div class="content">
+                <!-- Tắt tab vẫn lưu  -->
+        <h3>Số lần xem trang <font color="red">LocalStorage</font></h3>
+      <p>Bạn đã xem trang này: <span id="t"></span> lần</p>
+      <p>Bấm <b>F5 </b>để xem kết quả</p>
+      <button onclick="deleteitem()">Xóa</button>
+    </div></div>
+     <script>
+            var slx=localStorage.getItem('view');
+            if(slx==null) slx=0;
+            slx++;
+            localStorage.setItem('view',slx);
+            t=slx;
+            document.getElementById("t").innerHTML=t;
+            function deleteitem(){
+                localStorage.removeItem('view');
+                alert("Xóa thành công!");
+                location.reload(true);
+            }
+        </script>
+        
+</body>
+</html>

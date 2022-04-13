@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thành Sơn - PS23334 - Bài 3 - Lab6</title>
+    <style>
+        body{
+            background-color: #1f333f;
+        }
+.container {
+  line-height: 1.5;
+  margin: 0;
+  min-block-size: 500px;
+  padding: 10px;
+}
+
+h2 {
+    text-align: center;
+  font-size: 20px;
+}
+
+input {
+  border: none;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+fieldset{
+    border-radius: 10px;
+}
+.align {
+  display: grid;
+  place-items: center;
+  /* padding-top:80px; */
+}
+button {
+  background-color: #6bb5e2;
+  color: #fff;
+  padding: 4px 24px;
+  margin-top: 15px;
+  border: 1px solid black ;
+}
+button:hover {
+  background-color: #b80303;
+}
+
+.reg {
+  width: 400px;
+}
+
+.reg_header {
+  background-color: #6bb5e2;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  color: #fff;
+  padding: 1px 30px;
+  width:393px;
+}
+.reg_form {
+  background-color: #fff;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  color: #777;
+  opacity: 0.9;
+  display: grid;
+ gap: 20px; /*cho cái form nó rộng ra*/ 
+  padding: 20px 26px;
+  width:400px;
+}
+
+.reg input {
+  
+  border: 1px solid black;
+    border-radius: 10px;
+    padding: 2px 2px;
+}
+input[type="radio"]{
+  margin-left:5px;
+  margin-top: 5px;
+}
+/* .reg input[type="text"],
+.reg input[type="password"], .reg input[type="sex"],
+.reg input[type="image"], .reg input[type="quoctich"],
+.reg input[type="sothich"], .reg input[type="email"] {
+  background-color: #eee;
+  color: #777;
+  padding: 4px 10px;
+  width: 72%;
+  border-radius: 4px;
+  float:right;
+} */
+input[name="cmnd"], input[name="ht"]{
+    float:right;
+    width:75%;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 2px 2px;
+}
+.noinhan input[name="diachi"],input[type="radio"]{
+    margin-left: 35px;
+}
+.sanpham , .image{
+    width: 75%;
+    height:30px;
+    float:right;
+     border-radius: 10px;
+     margin-top: -3px;
+    margin-right: 4px;
+    border: 1px solid black;
+}
+
+.reg input[type="submit"] {
+  display: block;
+  margin: 0 auto;
+}
+textarea{
+  width:98%;
+}
+.menu{
+  display: flex;
+  justify-content: space-between;
+  background-color: #00448e;
+  /* margin-bottom: 10px; */
+  opacity: 0.8;
+  height:50px;
+  width:100%;
+}
+footer{
+  text-align: center;
+  background-color: #00448e;
+  margin-bottom: 10px;
+  opacity: 0.8;
+  height:110px;
+  margin-top: 10px;
+  font-size: 20px;
+  width:100%;
+}
+
+footer p{
+margin-right:440px;
+}
+.m{
+  margin: auto 16px;
+  padding-left: 0px;
+}
+.menu li{
+  list-style: none;
+}
+.menu a{
+  color:white;
+  font-size:25px;
+  text-decoration: none;
+  font-size: 23px;
+}
+.menu a:hover{
+  color:orangered;
+}
+.item{
+  color:white;
+  list-style: none;
+  margin:0 8px;
+  display: inline-block;
+}
+#kq{
+  color:red;
+}
+#tinh{
+    margin-top:20px;
+}
+    </style>
+    <script>
+        
+        function kiemtra(){
+            var ht=document.frm1.ht.value;
+            var cmnd=document.frm1.cmnd.value;
+            var tinh=document.frm1.tinh.value;
+            var bosung=document.frm1.bosung.value;
+            var loi="";
+            if(ht.length<3 || ht.length>30){
+              loi = loi+"Họ tên phải nhập từ 3 - 30 ký tự<br>";
+            }
+            if(cmnd.length!=9){
+              loi = loi+"CMND phải đúng 9 ký tự<br>";
+            }
+            var s=parseInt(cmnd);
+            if(tinh==0){
+              loi= loi +"Bạn chưa chọn tỉnh <br>";
+            }
+            if(bosung.length<50 || bosung.length>1000){
+              loi = loi+"Hãy nhập thông tin bổ sung từ 50 - 1000 ký tự";
+            }
+            if(loi.length>0){
+              setTimeout(function(){
+              document.getElementById("loi").innerHTML=loi;
+           }, 200); 
+           setTimeout(function(){
+            document.getElementById("loi").innerHTML="";
+        },10000);}
+            return false;
+        }
+    </script>
+</head>
+
+ 
+<body>
+    
+ 
+<div class="container">
+    <body class="align">
+        <div class="reg">
+          <div class="reg_header">
+            <h2>THÊM NHÂN VIÊN</h2>
+          </div>
+      
+          <form class="reg_form" name="frm1" onsubmit="return kiemtra()">
+      
+            <div>
+              <label for="name">Họ tên</label>
+              <input type="text" id="ht" name="ht" placeholder="Sơn">
+            </div>
+            <div> 
+                <div>
+                <label for="name">Số CMND</label>
+                <input type="text" id="cmnd" name="cmnd" placeholder="2397846843">
+              </div>
+              <div><br>
+                <label id="tinh">Tỉnh</label>
+               
+                <select class="sanpham" id="loai" name="tinh">
+                    <option hidden>Chọn tỉnh</option>
+                    <option value="1">TPHCM</option>
+                    <option value="2">Hà Nội</option>
+                    <option value="3">Cần Thơ</option>
+                </select></div>
+           
+               <div><br>
+                   <label>Thông tin bổ sung</label>
+                    <textarea name="bosung" rows="4"></textarea>
+               </div>
+           
+           
+            
+            
+             <center> <button type="submit" onclick="return kiemtra()">Đặt mua</button>
+          </center>  
+           <center><div id="loi"></div></center>
+          </form>
+      
+        </div></div>
+       
+</body>
+</html>

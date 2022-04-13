@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thành Sơn - PS23334 - Lab6 - Bài 5</title>
+    <style>
+        body{
+            background-color: #1f333f;
+        }
+.container {
+  line-height: 1.5;
+  margin: 0;
+  min-block-size: 500px;
+  padding: 10px;
+}
+       .container{
+           width: 25%;
+           margin: 0 auto;
+           
+       }
+       .container input{
+           width: 80px;
+           margin-left: 30px;
+       }
+       .container  #dapan{
+        margin-left: 45px;
+      
+
+       }
+       .q{
+           text-align: center;
+           font-size: 30px;
+       }
+    </style>
+    <style>
+        .container{
+  text-align: center; 
+  width:100%;
+  margin-top: 70px; 
+}
+.content{
+  border: 2px solid black;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-color: #3a444e;
+}
+button{
+  margin:5px 5px;
+  background-color: slategrey;
+  border: none;
+  color:white;
+  font-weight: 600;
+  
+  width:150px;
+  height:30px;
+}
+#pt,#kq{
+  font-size: 22px;
+  padding:5px 5px;
+  color:red;
+}
+h3{
+  text-align: center;
+  width:30%;
+  margin-top: 0px;
+  margin-left:35%;
+  color:white;
+  background-color: black;
+  border: 2px solid black;
+}
+img{
+  width:20%;
+}
+input[type="text"]{
+  color:red;
+  text-align: center;
+  background-color:white;
+  height:30px;
+  border-color:black;
+  border-radius: 6px;
+  margin-top: 5px;
+}
+input[name="dapan"]{
+    margin-left:20px;
+}
+#soa,#sob,#dapan{
+    font-size: 22px;
+    padding:5px 5px;
+    color:red;
+}
+h3{
+    text-align: center;
+    width:99.7%;
+    margin-top: 0px;
+    color:white;
+    background-color: black;
+    border: 2px solid black;
+} </style>
+</head>
+<body>
+  
+        <div class="container">
+            <div class="content">
+                <label>Nhập số a: </label> <input class="a" name="a" id="a" type="text"><br> 
+                <label>Nhập số b: </label><input name="b" id="b" type="text"> <br>
+                <label>Đáp án: </label> <input name="dapan" id="dapan" type="text"><br>
+
+<button onclick="choso()">Cho so</button>
+
+<button onclick=" check()">Tra loi</button><br>
+<div class="q" >Kết quả phép tính: <span id="kq"></span> <br/>
+
+Bạn đã nhập: <span id="kqq"></span>
+
+    </div>
+
+</div></div>
+<script>
+    function choso() {
+    var a = Math.round(Math.random() * 100);
+    var b = Math.round(Math.random() * 100);
+  
+    document.getElementById("a").value = a;
+    document.getElementById("b").value = b;
+    
+}
+function check(){
+   var a = Number(document.getElementById("a").value);
+   
+   var b = Number(document.getElementById("b").value);
+   var dapan = Number(document.getElementById("dapan").value)
+   
+    if ((a+b) != dapan){
+        alert("Sai gòi bé iu")
+
+    }
+    else if ((a+b) == ""){
+        alert("Khong duoc de trong")
+
+    }
+  
+     else {
+        alert("Giỏi quá bé ơi");
+    }
+    var kq = document.getElementById("kq").innerHTML = (a+b);
+    var kqq = document.getElementById("kqq").innerHTML = dapan;
+
+}
+</script>
+</body>
+
+</html>

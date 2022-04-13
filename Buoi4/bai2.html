@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thành Sơn - PS23334 - BÀI 2 - LAB4</title>
+
+<style>
+     body{
+         background-image: url("./image/hinh2.jpeg");
+    height:100%;
+    min-height:800px;
+    background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+        }
+     .container{
+    text-align: center; 
+    width:100%;
+    margin-top: 200px; 
+}
+.content{
+    border: 2px solid 1a65c0;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: #6eb1f7;
+}
+button{
+    margin:5px 5px;
+    background-color: slategrey;
+    border: none;
+    color:white;
+    font-weight: 600;
+    
+    width:150px;
+    height:30px;
+}
+#kq,#kq1,#kq2{
+    font-size: 22px;
+    padding:5px 5px;
+    color:red;
+}
+h3{
+    text-align: center;
+    width:99.7%;
+    margin-top: 0px;
+    color:white;
+    background-color: #277de0;
+    border: 2px solid #2b81e4;
+}
+</style>
+<script>
+    var sv= new Object();
+    sv.hoten=prompt("Họ và tên");
+    sv.diem=Number(prompt("Điểm"));
+sv.hienthi=function(){
+    if(sv.diem>=5){
+        sv.hocluc="Đậu";
+    }
+    else{ 
+        sv.hocluc="Rớt";
+}
+    document.getElementById("kq").innerHTML="<p>Họ và tên: "+sv.hoten+"</p>";
+    document.getElementById("kq1").innerHTML="<p>Điểm TB: "+sv.diem+"</p>";
+    document.getElementById("kq2").innerHTML="<p>Học lực: "+sv.hocluc+"</p>";
+} 
+
+</script>
+</head>
+<body>
+    <div class="container">
+       
+            <div class="content">
+        <h3>Thông tin sinh viên</h3>
+     <div id="kq"></div>
+     <div id="kq1"></div>
+     <div id="kq2"></div>
+     
+     
+     <div class="nut">
+         <button onclick="sv.hienthi()">Hiển thị</button>
+         
+     </div>       
+    </div>
+    
+</div>
+</body>
+</html>

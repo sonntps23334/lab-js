@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thành Sơn - PS2334 - BÀI 3 - LAB 5</title>
+    <style>
+        body{
+            background-color: beige;
+        }
+          .container{
+    text-align: center; 
+    width:20%;
+    margin-top: 70px; 
+    margin-left:40%;
+}
+.content{
+    border: 2px solid black;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: #3a444e;
+}
+button {
+            margin:10px 10px;
+            width: 80px;
+            height: 30px;
+        }
+
+.abc{
+    background-color: antiquewhite;
+    color:black;
+    border:solid black 1px;
+    padding:20px;
+}
+.xyz{
+    background-color: maroon;
+    color:mistyrose;
+    border:solid black 1px;
+    padding:20px;
+}
+button:disabled{
+    background-color: gray;
+}
+input[type="checkbox"]{
+    float:left;
+   margin-left: 110px;
+}
+x{
+    margin-right:80px;
+}
+</style>
+  
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <h3>Bạn nhớ mẹ khi nào</h3>
+            <div id="ketqua"></div>
+            <form>
+                <p><input type="checkbox" name="me" value="Hết tiền"><x>Hết tiền</x></p>
+               <p><input type="checkbox" name="me" value="Đói"><x>Đói</x></p>
+               <p><input type="checkbox" name="me" value="No"><x>No</x></p>
+               <p><input type="checkbox" name="me" value="Bệnh"><x>Bệnh</x></p>
+               <p> <input type="checkbox" name="me" value="Vui"><x>Vui</x></p>
+               <p><input type="checkbox" name="me" value="Buồn"><x>Buồn</x></p>
+                <button id="bnt1" type="button" onclick="check()">Chọn</button>
+
+            </form>
+    </div></div>
+  
+</body>
+<script>
+   
+    function check(){
+        //lấy các list nhớ vào mảng arr
+        arr = document.getElementsByName("me");
+        //lấy mode.element có id ketqua
+        var kq=document.getElementById("ketqua");
+  
+        var dem=0;
+        kq.innerHTML=""; ///gán kq giá trị là rỗng
+        for(i=0; i<arr.length;i++){
+            if(arr[i].checked){
+                var v=arr[i].value;
+                var chu=document.createTextNode(v);
+                var tagp=document.createElement("p");
+                tagp.appendChild(chu);
+                kq.appendChild(tagp);
+              //  kq.appendChild(chu);
+                dem++;
+            }
+            
+        }
+        if(dem>0){
+                kq.className="abc";
+            }else{
+                kq.innerHTML="Bạn chưa chọn mục nào";
+                kq.className="xyz";
+            }
+    }
+          
+  </script> 
+</html>

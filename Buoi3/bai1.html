@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thành Sơn - PS23334 - BÀI 1 - LAB3</title>
+<script>
+    do{
+     var so1 = Number(prompt("Nhập số 1:"));
+    }while(isNaN(so1)==true);
+    do{
+        var so2 = Number(prompt("Nhập số 2:"));
+    }while(isNaN(so2)==true);
+        var pheptinh = prompt("Nhập phép tính: ");    
+    /* var so1=ktten(so1);
+    function ktten(so1){
+         var checkso1 = new String;
+          checkso1 =so1;
+//bài này chưa xong lắm   
+          if(!isNaN(so1)){
+            return so1;
+        }else{
+      do{
+         return so1=Number(prompt("Nhập lại số 1: "));
+      }while(isNaN(so1)==true);
+        }
+    }
+        //   if(!isNaN(checkso1)){
+        //      return so1;
+        // }else{
+
+        //     while(true){
+        //             if(!isNaN(so1)){
+        //                 break;
+        //             }else{
+        //                 return so1=Number(prompt("Nhập lại số 1: "));
+        //             }
+        //     }
+        // }*/  
+
+        
+       
+</script>
+<style>
+    main{
+        border: 2px solid black;
+        width:200px;
+        height:100px; 
+        text-align: center;
+        margin-left: 600px;
+    }
+    main h2{
+        text-align: center;
+        background-color: black;
+        color:white;
+        margin-top: 0;
+    }
+</style>
+</head>
+<body>
+    <main>
+    <script>
+        switch(pheptinh){
+            case '+':
+            var kq = (so1+so2);
+            document.write("<h2>Tính tổng</h2>")
+            document.write("<p>Kết quả so1+so2 là: <b>" + kq + "</b></p>");
+            break;
+            
+            case '-':
+            var kq = (so1-so2);
+            document.write("<h2>Tính hiệu</h2>")
+            document.write("<p>Kết quả so1-so2 là: <b>" + kq + "</b></p>");
+            break;
+
+            case '*':
+            var kq = (so1*so2);
+            document.write("<h2>Tính tích</h2>")
+            document.write("<p>Kết quả so1*so2 là: <b>" + kq + "</b></p>");
+            break;
+
+            case '/':
+            var kq = (so1/so2);
+            document.write("<h2>Tính thương</h2>")
+            document.write("<p>Kết quả so1/so2 là: <b>" + kq + "</b></p>");
+            break;
+
+            default:
+            document.write(pheptinh+"không phải là phép tính hợp lệ");
+            break;
+        }
+         </script>
+    </main>
+</body>
+</html>

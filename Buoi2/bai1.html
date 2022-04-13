@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thành Sơn - PS23334 - Bài 1 - Lab2</title>
+</head>
+<script>
+    function tinhtuoi(date){
+        var td = new Date();
+        var n = td.getFullYear();
+        return n - date;
+    }
+</script>
+<style>
+    .main{
+    display:flex;
+    justify-content: center; 
+    width:100%;
+    margin-top: 100px; 
+}
+.content{
+    border: 2px solid black;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.nd{
+    padding: 0 18px;
+    color:red;
+}
+h4{
+    text-align: center;
+    width:300px;
+    margin-top: 0px;
+    color:white;
+    background-color: black;
+    border: 2px solid black;
+
+}
+</style>
+<body>
+    <div class="main">
+        <div class="content">
+        <h4>Thông tin sinh viên</h4>
+        <div class="nd">
+        <p><span>Họ và tên: </span><span id="ht"></span></p>
+        <p><span>Năm sinh: </span><span id="date"></span></p>
+        <p><span>Tuổi: </span><span id="t"></span></p>
+</div> </div> </div>
+<script>
+    
+    var ht= prompt("Bạn tên gì?");
+    
+    var date= prompt("Bạn sinh năm nào?");
+    if(date !=null && date !=''){
+        if(!isNaN(date)){
+        }else{
+            alert("Vui lòng nhập đúng số");
+            location.reload(true);
+        }
+    }
+    var t=tinhtuoi(date);
+    var ht=ktten(ht);
+        function ktten(ht){
+         var check = new String;
+         check =ht.trim();
+         if(check==""){
+            return check="Nguyễn Thành Sơn";
+        }else return check;
+    }
+
+    document.getElementById("ht").innerHTML=ht;
+    
+    document.getElementById("date").innerHTML=date;
+   
+    document.getElementById("t").innerHTML=t;
+    
+</script>  
+</body>
+</html>

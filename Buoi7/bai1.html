@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thành Sơn - PS23334 - LAB7 - BAI1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"> </script>
+    <style>
+        .container{
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            border: 1px solid green;
+            border-radius: 50px;
+            background-color: rgb(172, 230, 220);
+        }
+        .container h4{
+            font-size: 20px;
+        }
+        .container img{
+            width: 500px;
+        }
+        .container span{
+            font-size: 20px;
+           
+        }
+        .container li{
+            font-size: 20px;
+            list-style: none;
+        }
+    </style>
+</head>
+<body ng-app="b1">
+    <div class="container" ng-controller ="hienthi">
+        <div class="caption">
+            <h4>Thông tin sinh viên</h4>
+            <img src="image/{{photo}}" alt="">
+        </div>
+        <ul>
+            <li><span>Họ tên:</span>{{hoten}}</li>
+            <li><span>Ngày sinh:</span>{{ngaysinh}}</li>
+            <li><span>Giới tính:</span>{{gender}}</li>
+            <li><span>Điểm:</span>{{mark}}</li>
+        </ul>
+    </div>
+</body>
+<script>
+    app= angular.module("b1",[]);
+    app.controller("hienthi",xuly);
+    function xuly($scope){
+        $scope.hoten = "Nguyễn Thành Sơn";
+        $scope.ngaysinh = "17/11/2003";
+        $scope.gender = "Nam";
+        $scope.photo = "son.jpg";
+        $scope.mark = 10;
+    }
+    </script>
+</html>

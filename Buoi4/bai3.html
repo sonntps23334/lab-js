@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thành Sơn - PS23334 - Bài 3 - Lab4</title>
+    <style>
+        body{
+         background-image: url("./image/hinh5.jpg");
+    height:100%;
+    height:100%;
+    background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+        }
+        .container {
+            width: 1140px;
+            margin: auto;
+            border: 1px solid #2f5464;
+            margin-top: 200px;
+        }
+
+        header {
+            background: #2a4b5c;
+            opacity: 0.8;
+            height: 50px;
+            position: relative;
+        }
+
+        main {
+            background: #254659;
+            opacity: 0.8;
+            min-height: 100px;
+        }
+
+        footer {
+            text-align: center;
+            background: #2a4b5c;
+            opacity: 0.8;
+            height: 70px;
+            padding-top: 30px;
+        }
+        #chao{
+            color: white;
+            font-weight: bold;
+            font-style: italic;
+            position: absolute;
+            right: 5px;
+            bottom: 5px;
+        }
+        #dongho {
+            color: aqua;
+            font-weight: bold;
+            font-style: italic;
+            position: absolute;
+            right: 5px;
+            bottom: 5px;
+        }
+
+        w {
+            color: deeppink;
+        }
+
+        o {
+            color: aqua;
+            font-weight: 800;
+        }
+        .td{
+            text-align: center;
+            font-weight: bold;
+            padding-top: 20px;
+            color:white;
+        }
+        main p{
+           width: 50%;
+           margin-left: 30%;
+        }
+        button{
+            height:40px;
+            color:red;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div id="chao"></div>
+            <div id="dongho">
+            </div>
+        </header>
+        <main>
+            <div class="td"> Đồng hồ</div>
+            </br>
+            <center><button onclick="start()">Bắt đầu</button>
+            <button onclick="stop()">Dừng</button>
+        <button id="f5" onclick="f5()">Nạp lại</button>
+        </center>
+
+          
+        </main>
+        <footer>
+            <w>Họ tên</w> : <o>Nguyễn Thành Sơn</o></br>
+            <w>Email</w> : <o>nguyenthanhsont123@gmail.com</o>
+        </footer>
+    </div>
+<script>
+    // chào 
+    const myTimeout = setTimeout(loichao, 10000);
+    function loichao(){
+        document.getElementById("chao").innerHTML="<p>Tôi là Nguyễn Thành Sơn. Chào bạn! Chúc an lành</p>";
+    }
+    //
+    var dh=null;
+    
+    function tg(){
+        //đối tượng time js
+        var now = new Date();
+        var h = now.getHours();
+        var m = now.getMinutes();
+        var s = now.getSeconds();
+        document.getElementById("dongho").innerHTML= h+ ":" + m + ":" + s;
+    }
+   function start(){
+       //start hiển thị sau 1s
+    dh=setInterval("tg()",1000);
+   }
+    function stop(){
+        // xóa, dừng cái start trên
+          dh =clearInterval(dh);
+          // gán cho nó bằng null lại như cũ
+            dh=null;
+        }
+
+        function f5(){
+        
+       dh=setInterval("tg()",1);
+      }
+    
+</script>
+</body>
+
+</html>

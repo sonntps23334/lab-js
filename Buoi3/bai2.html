@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thành Sơn - PS23334 - BÀI 2 - LAB3</title>
+<script>
+     var f0 = Number(prompt("Nhập f0:"));
+        var f1 = Number(prompt("Nhập f1:"));
+        var sl = Number(prompt("Nhập số lượng:"));
+</script>
+<style>
+    *{
+        width:1024px;
+        margin:0; 
+    }
+    .container{
+        text-align: center;
+        width:100%;
+        height:500px;
+        margin-top:20px;
+        border: 1px solid green;
+        border-radius: 10px;
+        margin-left:20%;
+        background-color: darkkhaki;
+    }
+    .container p{
+        margin-top: 20px;
+        font-size: 23px;
+        margin-bottom:20px;
+        color:red;
+        font-weight: bold;
+        
+    }
+    .container span{
+        float:left;
+        width:8%;
+        word-wrap:break-word;
+        border:1px solid yellow;
+        border-radius:50%;
+        padding: 10px 20px 10px 20px ;
+        margin-left:25px;
+        background-color: yellow;
+        margin-bottom:10px;
+        margin-right: -10px;
+    }
+</style>
+<script>
+     var f0=ktten(f0);
+    function ktten(f0){
+         var check = new String;
+          check =f0;
+         if(!isNaN(check)){
+            return f0;
+        }else{
+           return f0=1;
+            } 
+    }
+    var f1=kttenf(f1);
+    function kttenf(f1){
+         var checkf = new String;
+          checkf =f1;
+         if(!isNaN(checkf)){
+            return f1;
+        }else{
+           return f1=2;
+            } 
+    }
+</script>
+</head>
+<body>
+    <div class="container">
+        <script>    
+        document.write("<p>DÃY FIBONACY</p>");
+            for(var i=0;i<sl;i++){
+                var f=f0+f1;
+                f0=f1;
+                f1=f;
+                document.write("<span>"+f+"<br></span>");
+            }
+           
+        
+        </script>
+    </div>
+</body>
+</html>

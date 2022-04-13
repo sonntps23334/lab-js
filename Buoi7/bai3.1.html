@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1
+/css/bootstrap.min.css">
+    <!-- JS -->
+    <script src="https://code.angularjs.org/1.4.0-rc.1/angular.js"></script>
+
+</head>
+
+<body ng-app="validationApp" ng-controller="mainController">
+    <div class="container" style="width:600px">
+
+        <!-- PAGE HEADER -->
+        <div class="page-header">
+            <h1>Đăng ký sản phẩm</h1>
+        </div>
+
+
+
+        <form name="loginForm" class="col-5 mx-auto border border-primary" ng-submit="submitForm(loginForm.$valid)" novalidate>
+
+            <div class="form-group" ng-class="{ 'has-error' : 
+             loginForm.name.$invalid && !loginForm.name.$pristine }">
+                <label>Tên sản phẩm</label>
+                <input type="text" name="name" ng-model="name" ng-minlength="2" ng-maxlength="30" required
+                    class="form-control bg-primary" autocomplete="off">
+                <p ng-show="loginForm.name.$dirty && loginForm.name.$error.required" class="text-
+               danger h6">Nhập dữ liệu đi má</p>
+                <p ng-show="loginForm.name.$error.minlength" class="text-
+            danger h6">
+                    Nhập tên phải từ 2 - 30 ký tự
+                </p>
+                <p ng-show="loginForm.name.$error.maxlength" class="text-
+            danger h6">
+                    Nhập tên phải từ 2 - 30 ký tự
+                </p>
+            </div>
+
+            <div class="form-group" ng-class="{ 'has-error' : 
+             loginForm.soluong.$invalid && !loginForm.soluong.$pristine }">
+                <label>Số lượng</label>
+                <input type="number" name="soluong" class="form-control bg-warning" ng-model="soluong" min="1" required>
+                <p ng-show="loginForm.soluong.$dirty && loginForm.soluong.$error.required" class="text-danger h6">Nhập
+                    dữ liệu đi má</p>
+                <p ng-show="loginForm.soluong.$invalid || soluong>100" class="text-danger h6">
+                    Nhập số lượng phải từ 1 - 100
+                </p>
+            </div>
+
+            <div class="form-group" ng-class="{ 'has-error' : 
+             loginForm.nsx.$invalid && !loginForm.nsx.$pristine }">
+                <label>Nhà sản xuất</label>
+                <select name="nsx" class="form-control bg-secondary text-white" ng-model="nsx">
+                    <option value="" selected disabled>Chọn NSX</option>
+                    <option value="1">Samsung</option>
+                    <option value="2">Toshiba</option>
+                    <option value="3">HTC</option>
+                </select>
+                <p ng-show="!nsx || nsx==0" class="text-danger h6">Vui lòng chọn nhà sản xuất</p>
+            </div>
+
+            <div class="form-group" ng-class="{ 'has-error' : 
+   loginForm.tinhtrang.$invalid && !loginForm.tinhtrang.$pristine }">
+                <label>Tình trạng</label>
+                <fieldset class="border border-secondary p-3">
+                    <input name="tinhtrang" type="radio" value="1" ng-model="tinhtrang"> Hàng cũ &nbsp;
+                    <input name="tinhtrang" type="radio" value="2" ng-model="tinhtrang"> Hàng mới
+                    <p ng-show="!tinhtrang" class="text-danger h6"><br>Hàng cũ hay mới</p>
+                    </fieldset>
+               
+            </div>
+
+            <div class="form-group" ng-class="{ 'has-error' : 
+loginForm.mausac.$invalid && !loginForm.mausac.$pristine }">
+                <label>Màu sắc</label>
+                <fieldset class="border border-secondary p-3">
+                    <input value="do" type="checkbox" ng-model="maudo"> Đỏ &nbsp; 
+                    <input value="den" type="checkbox" ng-model="mauden"> Đen &nbsp;
+                    <input value="trang" type="checkbox" ng-model="mautrang"> Trắng
+                    <p ng-show="!maudo && !mauden && !mautrang " class="text-danger h6"><br>Màu gì vậy?</p>
+                    </fieldset>
+
+            </div>
+            <button type="submit" class="btn btn-primary" ng-disabled="loginForm.$invalid">
+                Submit
+            </button>
+        </form>
+    </div>
+</body>
+<script>
+    // create angular app
+    var validationApp = angular.module('validationApp', []);
+
+    // create angular controller
+    validationApp.controller('mainController', function ($scope) {
+
+        // function to submit the form after all validation has occurred			
+        $scope.submitForm = function (isValid) {
+
+            // check to make sure the form is completely valid
+            if (isValid) {
+                alert('Tôi là Nguyễn Thành Sơn! Bạn đã nhập đúng dữ liệu yêu cầu');
+            }
+        };
+    });
+</script>
+
+</html>

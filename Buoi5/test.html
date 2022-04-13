@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thành Sơn - PS2334 - BÀI 1 - LAB 5</title>
+    <script>
+    function display(){
+        var tensp = document.getElementById("ten").innerText;
+        var soluongsp = document.getElementById("qty").value;
+        var giasp = document.getElementById("pro").getAttribute("data-price");
+        var tinhtien = giasp*soluongsp;
+        document.getElementById("name").innerText=tensp;
+        document.getElementById("amount").innerText="$"+tinhtien;
+    }
+</script>
+</head>
+
+<body>
+    <div class="container">
+        <h2 id="ten">IPHONE XS MAX 2021</h2>
+        <img src="./image/iphone.jpg"><br>
+        <label id="pro" data-price="1950">Số lượng:</label>
+        <input id="qty" type="number" value="1" />
+        <button onclick="display()">Tính</button>
+        <hr>
+        <h3>Tên: <span id="name">?</span></h3>
+        <h3>Giá: <span id="amount">?</span></h3>
+    </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 4</title>
+    <style>
+        .container{
+       text-align: center; 
+       width:100%;
+       margin-top: 100px; 
+   }
+   .content{
+       border: 2px solid black;
+       border-bottom-left-radius: 8px;
+       border-bottom-right-radius: 8px;
+       border-top-left-radius: 8px;
+       border-top-right-radius: 8px;
+   }
+   button{
+       margin: 5px 5px 25px 5px;
+       background-color: slategrey;
+       border: none;
+       color:white;
+       font-weight: 600;
+       
+       width:150px;
+       height:30px;
+   }
+   #kq,#kq1,#kq2{
+       font-size: 22px;
+       padding:5px 5px;
+       color:red;
+   }
+   h3{
+       text-align: center;
+       width:99.7%;
+       margin-top: 0px;
+       color:white;
+       background-color: black;
+       border: 2px solid black;
+   }
+   </style>
+    <script>
+        var newWindow;
+        function openw() {
+            newWindow = window.open("https://caodang.fpt.edu.vn/", "FPoly" , "toolbar=Yes,menubar=Yes,width=100");
+        }
+        function closew() {
+            if (newWindow) {
+                newWindow.close();
+            }
+
+        }
+        function checkw() {
+            if (newWindow) {
+                if (newWindow.closed) {
+                    alert("Cửa sổ đã đóng");
+                } else {
+                    alert("Cửa sổ đang mở!");
+                }
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+       
+        <div class="content">
+    <h3>Điều khiển window</h3>
+ <button onclick="openw()">Mở cửa sổ</button>
+ <button onclick="closew()">Đóng cửa sổ</button>
+ <button onclick="checkw()">Kiểm tra</button>
+ 
+ 
+
+</div>
+
+</div>
+</body>
+
+</html>

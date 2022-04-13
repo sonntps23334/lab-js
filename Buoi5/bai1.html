@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thành Sơn - PS2334 - BÀI 1 - LAB 5</title>
+    <style>
+          .container{
+    text-align: center; 
+    width:100%;
+    margin-top: 70px; 
+}
+.content{
+    border: 2px solid black;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: #3a444e;
+}
+button{
+    margin:5px 5px;
+    background-color: slategrey;
+    border: none;
+    color:white;
+    font-weight: 600;
+    
+    width:150px;
+    height:30px;
+}
+#pt,#kq{
+    font-size: 22px;
+    padding:5px 5px;
+    color:red;
+}
+h3{
+    text-align: center;
+    width:30%;
+    margin-top: 0px;
+    margin-left:35%;
+    color:white;
+    background-color: black;
+    border: 2px solid black;
+}
+img{
+    width:20%;
+}
+input[type="number"]{
+    color:red;
+    text-align: center;
+    background-color:black;
+    height:30px;
+    border-color:black;
+    border-radius: 6px;
+} </style>
+    <script>
+    function display(){
+        var nf = new Intl.NumberFormat();
+        var tensp = document.getElementById("ten").innerText;
+        var soluongsp = document.getElementById("qty").value;
+        //getAttribute() Phương thức của Phần tử trả về giá trị của một thuộc tính được chỉ định
+        var giasp = document.getElementById("pro").getAttribute("data-price");
+        var tinhtien = giasp*soluongsp;
+        document.getElementById("name").innerText=tensp;
+        document.getElementById("amount").innerText=nf.format(tinhtien)+"đ";
+    }
+
+</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+        <h2 id="ten">iPhone 13 Pro Max 128GB</h2>
+        <img src="./image/ipx.png"><br>
+        <label id="pro" data-price="30490000">Số lượng:</label>
+        <input id="qty" type="number" value="1" />
+        <button onclick="display()">Tính</button>
+        <hr>
+        <h3>Tên: <span id="name">?</span></h3>
+        <h3>Giá: <span id="amount">?</span></h3>
+    </div></div>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thành Sơn - PS2334 - BÀI 2 - LAB 5</title>
+    <style>
+          .container{
+    text-align: center; 
+    width:100%;
+    margin-top: 70px; 
+}
+.content{
+    border: 2px solid black;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: #3a444e;
+}
+button{
+    margin:5px 5px;
+    background-color: slategrey;
+    border: none;
+    color:white;
+    font-weight: 600;
+    
+    width:150px;
+    height:30px;
+}
+#pt,#kq{
+    font-size: 22px;
+    padding:5px 5px;
+    color:red;
+}
+h3{
+    text-align: center;
+    width:30%;
+    margin-top: 0px;
+    margin-left:35%;
+    color:white;
+    background-color: black;
+    border: 2px solid black;
+    margin-top:20px;
+}
+img{
+    width:20%;
+}
+input[type="number"]{
+    color:red;
+    text-align: center;
+    background-color:black;
+    height:30px;
+    border-color:black;
+    border-radius: 6px;
+} 
+caption{
+    font-weight:600;
+    font-size: 1.2em;
+   
+}
+th,td{
+    border:1px solid black;
+    padding:6px;
+    text-align: center;
+}
+table{
+    width:100%;
+    
+    border-collapse: collapse;
+}
+button:disabled{
+    background-color: gray;
+}
+</style>
+    <script>
+   
+    function them(button) {
+            var row = button.parentElement.parentElement.cloneNode(true);
+            var btnXoa = row.getElementsByTagName("button")[0];
+            btnXoa.innerText = "Xoá";
+            btnXoa.setAttribute('onclick','xoa(this)');
+            document.getElementById("cart").appendChild(row);
+            document.getElementById("cart").style.display="";
+            tinhtong();
+        }
+    
+        function xoa(button) {
+            var row = button.parentElement.parentElement;
+            document.getElementById("cart").removeChild(row);
+            tinhtong();
+        }
+        function tinhtong() {
+            var cart = document.getElementById("cart");
+            var rows = cart.getElementsByTagName("tr");
+            var tong = 0;
+            for (let i = 0; i < rows.length; i++) {
+                //var cells = rows[i].getElementsByTagName("td");
+                //var price = cells[1].innerText.substring(1);
+                var price =rows[i].children[2].innerText;
+                price=parseInt(price);
+                tong += Number(price);
+            }
+            document.getElementById("tong").innerText = tong;
+        }
+       function daott(obj){
+           var row=obj.parentElement.parentElement;
+           var btn=row.getElementsByTagName("button")[0];
+           btn.disabled= ! btn.disabled;
+}
+document.getElementById("tong").innerText = tong;
+            if (tong == 0) {
+                document.getElementById("empty").style.display = "";
+                document.getElementById("not-empty").style.display = "none";
+            }else {
+                document.getElementById("empty").style.display = "none";
+                document.getElementById("not-empty").style.display = "";
+                if (tong > 1) {
+                    document.getElementById("tong").style.backgroundColor = "Yellow";
+                }else {
+                    document.getElementById("tong").style.backgroundColor = "white";
+                }
+            }
+        
+</script> 
+<script>
+    document.getElementById("cart").style.display="none";
+</script> 
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+       <table>
+           <caption>CÁC SẢN PHẨM HOA</caption>
+           <thead>
+               <tr>
+                   <th><input type="checkbox" name="" id="chonhet">
+                </th>
+                <th>Tên sản phẩm hoa</th>
+                <th>Giá</th>
+                <th>Mua</th>
+               </tr>
+           </thead>
+           <tbody>
+           <tr>
+               <td>
+                   <input type="checkbox" class="chon" checked onchange="daott(this)"></td>
+                   <td>Hạnh phúc trọn vẹn</td>
+                   <td>900000</td>
+                   <td><button onclick="them(this)"  onchange="daott(this)">Chọn</button></td>
+              
+           </tr>
+           <tr>
+               <td><input type="checkbox" class="chon" checked onchange="daott(this)"></td>
+               <td>Con đường thành công</td>
+               <td>1750000</td>
+               <td><button onclick="them(this)"  onchange="daott(this)">Chọn</button></td>
+         </tr>    <tr>
+               <td><input type="checkbox" class="chon" checked onchange="daott(this)"></td>
+               <td>Phú quý</td>
+               <td>1300000</td>
+               <td><button onclick="them(this)"  onchange="daott(this)">Chọn</button></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="chon" checked onchange="daott(this)" ></td>
+                <td>Vững bước</td>
+                <td>1150000</td>
+                <td><button onclick="them(this)"  onchange="daott(this)">Chọn</button></td>
+             </tr>
+             <tr>
+                <td><input type="checkbox" class="chon" checked onchange="daott(this)"></td>
+                <td>Một cõi đi về</td>
+                <td>950000</td>
+                <td><button onclick="them(this)"  onchange="daott(this)">Chọn</button></td>
+             </tr>
+          </tbody>
+       </table>
+       <hr style="margin:20px 0">
+       <table id="cart"><caption>GIỎ HÀNG CỦA BẠN</caption></table>
+       
+
+        <h3>TỔNG SỐ TIỀN: <span id="tong">0</span> VND</h3>
+    
+    </div></div>
+</body>
+</html>

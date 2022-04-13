@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thành Sơn - PS23334 - Bài 4 - Lab4</title>
+    <style>
+         body{
+         background-image: url("./image/hinh3.jpg");
+    height:100%;
+    min-height:800px;
+    background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+        }
+        .container{
+       text-align: center; 
+       width:100%;
+       margin-top: 200px; 
+   }
+   .content{
+       border: 2px solid black;
+       border-bottom-left-radius: 8px;
+       border-bottom-right-radius: 8px;
+       border-top-left-radius: 8px;
+       border-top-right-radius: 8px;
+       background-color: #d4ebf9ed;
+   }
+   button{
+       margin: 5px 5px 25px 5px;
+       background-color: slategrey;
+       border: none;
+       color:white;
+       font-weight: 600;
+       
+       width:150px;
+       height:30px;
+   }
+   #kq,#kq1,#kq2{
+       font-size: 22px;
+       padding:5px 5px;
+       color:red;
+   }
+   h3{
+       text-align: center;
+       width:99.7%;
+       margin-top: 0px;
+       color:white;
+       background-color: black;
+       border: 2px solid black;
+   }
+   </style>
+   <script>
+    var newWindow;
+   
+    function openw() {
+        setTimeout(function(){ newWindow.open() }, 3000);
+        newWindow = window.open("../buoi3/bai4.html", "FPoly" , "toolbar=Yes,menubar=Yes,width=600,height=600,top=50,left=600,status=0,");
+        newWindow.focus();   
+    }  
+   
+   
+     function movew(){
+        newWindow.moveBy(10,10);
+        newWindow.focus();
+    }
+    function movetow(){
+        var x=prompt("Nhập x");
+        var y=prompt("Nhập y");
+        newWindow.moveTo(x,y);
+        newWindow.focus();
+    }
+    function closew() {
+        if (newWindow) {
+            newWindow.close();
+        }
+
+    }
+    function checkw() {
+        if (newWindow) {
+            if (newWindow.closed) {
+                alert("Cửa sổ đã đóng");
+            } else {
+                alert("Cửa sổ đang mở!");
+            }
+        }
+
+    }
+    function printw(){
+        newWindow.print();
+    }
+  
+</script>
+</head>
+
+<body>
+    <div class="container">
+       
+        <div class="content">
+    <h3>Điều khiển window</h3>
+ <button onclick="openw()" >Mở cửa sổ</button>
+ <button onclick="closew()">Đóng cửa sổ</button> 
+ <button onclick="checkw()">Kiểm tra</button>
+ <button onclick="movew()">Di chuyển 1 chút</button>
+ <button onclick="movetow()">Di chuyển tời điểm</button>
+ <button onclick="printw()">In ấn</button>
+
+ 
+ 
+
+</div>
+
+</div>
+
+</body>
+
+</html>
